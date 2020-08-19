@@ -1,0 +1,124 @@
+<form>
+  <h3>Войти</h3>
+  <div class="col-6">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Username"
+        #userName
+        required
+      />
+      <small id="emailHelp" class="form-text text-muted"
+        >We'll never share your email with anyone else.</small
+      >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Password"
+        #userPassword
+        required
+      />
+    </div>
+    <!-- <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div> -->
+    <button
+      type="submit"
+      class="btn btn-primary"
+      (click)="authService.SignIn(userName.value, userPassword.value)"
+    >
+      Log in</button
+    ><br />
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      (click)="authService.GoogleAuth()"
+    >
+      Войти через гугл</button
+    ><br />
+    <button type="submit" class="btn btn-primary" routerLink="/forgot-password">
+      Сбросить пароль</button
+    ><br />
+
+    <button type="submit" class="btn btn-primary" routerLink="/register-user">
+      Регистрация</button
+    ><br />
+  </div>
+</form>
+
+<!-- <div class="displayTable">
+  <div class="displayTableCell">
+    <div class="authBlock">
+      <h3>Войти</h3>
+      <div class="formGroup">
+        <input
+          type="text"
+          class="formControl"
+          placeholder="Username"
+          #userName
+          required
+        />
+      </div>
+
+      <div class="formGroup">
+        <input
+          type="password"
+          class="formControl"
+          placeholder="Password"
+          #userPassword
+          required
+        />
+      </div>
+     
+      <div class="formGroup">
+        <input
+          type="button"
+          class="btn btnPrimary"
+          value="Log in"
+          (click)="authService.SignIn(userName.value, userPassword.value)"
+        />
+      </div>
+
+      <div class="formGroup">
+        <span class="or"><span class="orInner">Или</span></span>
+      </div>
+
+      Calling GoogleAuth Api from AuthService
+      <div class="formGroup">
+        <button
+          type="button"
+          class="btn googleBtn"
+          (click)="authService.GoogleAuth()"
+        >
+          <i class="fab fa-google-plus-g"></i>
+          Войти через Google
+        </button>
+      </div>
+
+      <div class="forgotPassword">
+        <span routerLink="/forgot-password">Сбросить пароль?</span>
+      </div>
+    </div>
+
+    <div class="redirectToLogin">
+      <span
+        >Don't have an account?<span
+          class="redirect"
+          routerLink="/register-user"
+        >
+          Sign Up</span
+        ></span
+      >
+    </div>
+  </div>
+</div> -->
