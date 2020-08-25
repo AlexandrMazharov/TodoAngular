@@ -1,2 +1,23 @@
-<p>home works!</p>
+<!-- <p>home works!</p>
 <p>This is home component</p>
+<p>{{userid}}</p> -->
+
+<div class="container">
+  <img src="../../images/ORL55C1.png" class="img-fluid" alt="" />
+  <h2>Добро пожаловать</h2>
+  <p>
+    На этой планформе представлен удобный чек-лист, где вы можете составить план
+    на день и текущую неделю. Для начала работы нужно авторизироваться.
+  </p>
+
+  <button type="button" class="btn btn-primary">Главный</button>
+
+  <button type="button" class="btn btn-success">Успех</button>
+  
+  <!--  -->
+</div>
+<input type="submit" (click)="todoService.AddItem()" />
+<input type="submit" (click)="todoService.getAll()" value="getAll" />
+<h2>Диспетчер задач TODO APP</h2>
+<p>Авторизийтесь для начала работы</p>
+<app-sign-up></app-sign-up>

@@ -1,54 +1,42 @@
-<form>
-  <h3>Регистрация</h3>
+<div class="d-flex justify-content-center">
   <div class="col-6">
-    <div class="form-group">
-      <label for="exampleInputEmail">Email address</label>
-      <input
-        id="exampleInputEmail"
-        type="email"
-        class="form-control"
-        placeholder="Email Address"
-        #userEmail
-        required
-      />
-
-      <label for="exampleInputPass">Password</label>
-      <input
-        id="exampleInputPass"
-        type="password"
-        class="form-control"
-        placeholder="Password"
-        #userPwd
-        required
-      />
-
-      <input
-        type="button"
-        class="btn btnPrimary btn btn-primary btn-block"
-        value="Зарегистрироваться "
-        (click)="authService.SignUp(userEmail.value, userPwd.value)"
-      />
-
-      <button
-        type="button"
-        class="btn googleBtn btn-outline-primary"
-        (click)="authService.GoogleAuth()"
-      >
-        <i class="fab fa-google-plus-g"></i>
-        Продолжить с гугл</button
-      ><br />
-
-      <label for="exampleInputLogin">Уже имеете аккаунт?</label>
-      <button
-        id="exampleInputLogin"
-        class="form-control btn btn-outline-primary"
-        routerLink="/sign-in"
-      >
-        Войти
-      </button>
-    </div>
+    <form>
+      <h3>Регистрация</h3>
+      <div class="">
+        <div class="form-group">
+          <label for="exampleInputEmail">Email address</label>
+          <input
+            id="exampleInputEmail"
+            type="email"
+            class="form-control"
+            placeholder="Email Address"
+            #userEmail
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPass">Password</label>
+          <input
+            id="exampleInputPass"
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            #userPwd
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="button"
+            class="btn btnPrimary btn btn-primary btn-block"
+            value="Зарегистрироваться "
+            (click)="authService.SignUp(userEmail.value, userPwd.value)"
+          />
+        </div>
+      </div>
+    </form>
   </div>
-</form>
+</div>
 
 <!-- <div class="displayTable">
   <div class="displayTableCell">

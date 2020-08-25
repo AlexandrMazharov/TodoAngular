@@ -1,4 +1,4 @@
-<form>
+<!-- <form>
   <h3>Войти</h3>
   <div class="col-6">
     <div class="form-group">
@@ -27,10 +27,7 @@
         required
       />
     </div>
-    <!-- <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div> -->
+
     <button
       type="submit"
       class="btn btn-primary"
@@ -54,71 +51,73 @@
       Регистрация</button
     ><br />
   </div>
-</form>
-
-<!-- <div class="displayTable">
-  <div class="displayTableCell">
-    <div class="authBlock">
-      <h3>Войти</h3>
-      <div class="formGroup">
+</form> -->
+<div class="d-flex justify-content-center">
+  <div class="col-6">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Почта</label>
         <input
-          type="text"
-          class="formControl"
-          placeholder="Username"
+          type="email"
+          class="form-control"
+          aria-describedby="emailHelp"
+          placeholder="Почта"
           #userName
           required
         />
+        <!-- <small id="emailHelp" class="form-text text-muted"
+          >We'll never share your email with anyone else.</small
+        > -->
       </div>
-
-      <div class="formGroup">
+      <div class="form-group">
+        <label for="exampleInputPassword1">Пароль</label>
         <input
           type="password"
-          class="formControl"
-          placeholder="Password"
+          class="form-control"
+          placeholder="Пароль"
           #userPassword
           required
         />
       </div>
-     
-      <div class="formGroup">
-        <input
-          type="button"
-          class="btn btnPrimary"
-          value="Log in"
-          (click)="authService.SignIn(userName.value, userPassword.value)"
-        />
-      </div>
-
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Или</span></span>
-      </div>
-
-      Calling GoogleAuth Api from AuthService
-      <div class="formGroup">
-        <button
-          type="button"
-          class="btn googleBtn"
-          (click)="authService.GoogleAuth()"
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+        <label class="form-check-label" for="exampleCheck1"
+          >Запомнить меня</label
         >
-          <i class="fab fa-google-plus-g"></i>
-          Войти через Google
-        </button>
       </div>
-
-      <div class="forgotPassword">
-        <span routerLink="/forgot-password">Сбросить пароль?</span>
-      </div>
-    </div>
-
-    <div class="redirectToLogin">
-      <span
-        >Don't have an account?<span
-          class="redirect"
+      <div class="d-flex flex-column align-items-center">
+        <div class="d-flex justify-content-center">
+          <div class="form-group">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              class="btn btn-primary"
+              (click)="authService.SignIn(userName.value, userPassword.value)"
+            >
+              Войти
+            </button>
+          </div>
+          <div class="form-group mx-2">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              (click)="authService.GoogleAuth()"
+            >
+              Войти через Google</button
+            ><br />
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-success"
           routerLink="/register-user"
         >
-          Sign Up</span
-        ></span
-      >
-    </div>
+          Регистрация</button
+        ><br />
+        <button type="submit" class="btn" routerLink="/forgot-password">
+          Забыли пароль?</button
+        ><br />
+      </div>
+    </form>
   </div>
-</div> -->
+</div>

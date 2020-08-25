@@ -11,23 +11,16 @@ import { ForgotPasswordComponent } from '../app/admin/forgot-password/forgot-pas
 import { VerifyEmailComponent } from '../app/admin/verify-email/verify-email.component';
 import { HomeComponent } from './maincomponents/home/home.component';
 import { AuthGuard } from './shared/guard/auth.guard';
+import { MainComponent } from './maincomponents/main/main.component';
 
 const routes: Routes = [
-  // {
-
-  // path: 'admin',
-  // component:  "",
-
-  // children: [
-  // { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent },
   { path: 'sign-in', component: LoginComponent },
   { path: 'register-user', component: SignUpComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'todo', component: MainComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
-  // ],
-  // },
 ];
 
 @NgModule({

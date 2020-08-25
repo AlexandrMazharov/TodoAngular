@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="alert alert-primary" role="alert">
+    Задачи на сегодня
+  </div>
+  <div *ngIf="todolist.isLoad; else unset" class="">
+    <ul>
+      <app-task-list-item *ngFor="let item of todolist.todoList" [item]="item">
+      </app-task-list-item>
+    </ul>
+    <button type="button" class="btn btn-primary" (click)="AddEmptyTask()">
+      Add
+    </button>
+  </div>
+  <ng-template #unset class="">
+    <div class="d-center">
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </ng-template>
+</div>
+<!-- task list item -->

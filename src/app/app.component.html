@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <a class="navbar-brand" href="#">TODO-APP</a>
   <button
     class="navbar-toggler"
@@ -23,11 +23,18 @@
           >REGISTER <span class="sr-only">(current)</span></a
         >
       </li>
+      <li class="nav-item" (click)="authService.SignOut()">
+        <a class="nav-link">SignOut <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" [routerLink]="['/todo']">
+        <a class="nav-link">MAIN <span class="sr-only">(current)</span></a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="#"
           >Home <span class="sr-only">(current)</span></a
         >
       </li>
+
       <li class="nav-item">
         <a class="nav-link" href="#">Features</a>
       </li>
@@ -41,6 +48,51 @@
       </li>
     </ul>
   </div>
-</nav>
+</nav> -->
+<!--  -->
+<div class="header d-flex flex-row justify-content-end ">
+  <div class="logo my-2">ANGULAR_APP</div>
+</div>
+<div class="container-fluid custom-bg">
+  <div class="container custom-main">
+    <div class="d-flex flex-column">
+      <ul class="nav nav-tabs">
+        <li class="nav-item" *ngIf="!authService.isLoggedIn">
+          <a
+            class="nav-link"
+            href="#"
+            routerLink="/sign-in"
+            routerLinkActive="active"
+            >Вход</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="authService.isLoggedIn">
+          <a
+            class="nav-link"
+            href="#"
+            (click)="authService.SignOut()"
+            [routerLink]="['/log-in']"
+            routerLinkActive="active"
+            >Выход</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="authService.isLoggedIn">
+          <a
+            class="nav-link"
+            href="#"
+            [routerLink]="['/todo']"
+            routerLinkActive="active"
+            >Список задач</a
+          >
+        </li>
+      </ul>
 
-<router-outlet> </router-outlet>
+      <!-- //картинка видна если не авторизирован -->
+      <div *ngIf="!authService.isLoggedIn" class="mx-auto text-center">
+        <img src="../assets/images/ORL55C1.png" alt="img" class="img-fluid" />
+      </div>
+
+      <router-outlet> </router-outlet>
+    </div>
+  </div>
+</div>
