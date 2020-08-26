@@ -56,12 +56,14 @@
   <div class="col-6">
     <form>
       <div class="form-group">
-        <label for="exampleInputEmail1">Почта</label>
+        <label for="exampleInputEmail1">{{
+          "LANGUAGES.email" | translate
+        }}</label>
         <input
           type="email"
           class="form-control"
           aria-describedby="emailHelp"
-          placeholder="Почта"
+          placeholder="{{ 'LANGUAGES.email' | translate }}"
           #userName
           required
         />
@@ -70,20 +72,22 @@
         > -->
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Пароль</label>
+        <label for="exampleInputPassword1">{{
+          "LANGUAGES.password" | translate
+        }}</label>
         <input
           type="password"
           class="form-control"
-          placeholder="Пароль"
+          placeholder="{{ 'LANGUAGES.password' | translate }}"
           #userPassword
           required
         />
       </div>
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-        <label class="form-check-label" for="exampleCheck1"
-          >Запомнить меня</label
-        >
+        <label class="form-check-label" for="exampleCheck1">{{
+          "LANGUAGES.rememberMe" | translate
+        }}</label>
       </div>
       <div class="d-flex flex-column align-items-center">
         <div class="d-flex justify-content-center">
@@ -94,7 +98,7 @@
               class="btn btn-primary"
               (click)="authService.SignIn(userName.value, userPassword.value)"
             >
-              Войти
+              {{ "LANGUAGES.login" | translate }}
             </button>
           </div>
           <div class="form-group mx-2">
@@ -103,7 +107,7 @@
               class="btn btn-primary"
               (click)="authService.GoogleAuth()"
             >
-              Войти через Google</button
+              {{ "LANGUAGES.logInGoogle" | translate }}</button
             ><br />
           </div>
         </div>
@@ -112,10 +116,10 @@
           class="btn btn-success"
           routerLink="/register-user"
         >
-          Регистрация</button
+          {{ "LANGUAGES.register" | translate }}</button
         ><br />
         <button type="submit" class="btn" routerLink="/forgot-password">
-          Забыли пароль?</button
+          {{ "LANGUAGES.forgotPassword" | translate }}</button
         ><br />
       </div>
     </form>

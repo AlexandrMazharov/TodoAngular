@@ -1,0 +1,22 @@
+{
+  "LANGUAGES": {
+    "email": "Email ",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "login": "Login",
+    "logInGoogle": "Login in Google",
+    "register": "Registration",
+    "forgotPassword": "Forgot your password?",
+
+    "emaiAddress": "Email address",
+    "thankRegistering": "Thank You for Registering",
+    "sentConfirmationEmail": "We have sent a confirmation email to ",
+    "checkYourEmail": "Please check your email and click on the link to verfiy your email address.",
+    "sendLetter": "Выслать письмо повторно",
+    "logout": "LogOut",
+    "taskList": "Task list",
+    "tasksForToday": "Tasks for today",
+    "addTask": "Add task",
+    "delTask": "Dell"
+  }
+}

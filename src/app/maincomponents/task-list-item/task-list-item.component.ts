@@ -9,7 +9,8 @@ import {
 import { Task } from 'src/app/shared/services/task';
 import { TodoListService } from 'src/app/shared/services/todoList/todo-list.service';
 import { Router } from '@angular/router';
-
+import { TranslateService } from '@ngx-translate/core';
+import { from } from 'rxjs';
 @Component({
   selector: 'app-task-list-item',
   templateUrl: './task-list-item.component.html',
@@ -17,7 +18,7 @@ import { Router } from '@angular/router';
 })
 export class TaskListItemComponent implements OnInit {
   public _task: Task;
-
+  public titileDel;
   myForm: FormGroup;
 
   initForm() {
@@ -27,7 +28,7 @@ export class TaskListItemComponent implements OnInit {
         disabled: this._task.isСompleted,
       },
       complectedControl: [this._task.isСompleted],
-      btnSaveControl: ['Dell'],
+      btnSaveControl: ["X"],
     });
   }
   @Input()
@@ -57,8 +58,13 @@ export class TaskListItemComponent implements OnInit {
   }
   constructor(
     public todoListService: TodoListService,
-    private fb: FormBuilder
-  ) {}
+    private fb: FormBuilder,
+    private translateService: TranslateService
+  ) {
+    // this.translateService.get(['delTask']).subscribe((translations) => {
+    //   this.titileDel = translations['delTask'];
+    // });
+  }
 
   ngOnInit(): void {
     this.initForm();

@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container my-2">
   <div class="alert alert-primary" role="alert">
-    Задачи на сегодня
+    {{ "LANGUAGES.tasksForToday" | translate }}
   </div>
   <div *ngIf="todolist.isLoad; else unset" class="">
     <ul>
@@ -8,7 +8,7 @@
       </app-task-list-item>
     </ul>
     <button type="button" class="btn btn-primary" (click)="AddEmptyTask()">
-      Add
+      {{ "LANGUAGES.addTask" | translate }}
     </button>
   </div>
   <ng-template #unset class="">

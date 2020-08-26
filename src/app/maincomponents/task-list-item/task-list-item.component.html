@@ -11,16 +11,18 @@
     </div>
     <input
       type="text"
-      class="form-control"
+      class="form-control rounded-right"
       aria-label="Text input with radio button"
       formControlName="titleControl"
     />
-    <input
+    <button
       type="button"
-      class="btn save"
+      class="close custom__close"
+      aria-label="Close"
       (click)="DeleteItem()"
-      formControlName="btnSaveControl"
-    />
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
 </form>
 <!--  -->

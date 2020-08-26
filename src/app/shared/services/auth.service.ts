@@ -30,7 +30,7 @@ export class AuthService {
         localStorage.setItem('user', null);
         JSON.parse(localStorage.getItem('user'));
       }
-      
+
       router.navigate['/todo'];
     });
   }
@@ -152,7 +152,7 @@ export class AuthService {
     // return this.afAuth.auth.signOut().then(() => {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['/sign-in']);
+      this.router.navigate(['']);      
     });
   }
 }

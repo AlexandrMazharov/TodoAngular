@@ -50,20 +50,24 @@
   </div>
 </nav> -->
 <!--  -->
-<div class="header d-flex flex-row justify-content-end ">
-  <div class="logo my-2">ANGULAR_APP</div>
-</div>
-<div class="container-fluid custom-bg">
-  <div class="container custom-main">
-    <div class="d-flex flex-column">
-      <ul class="nav nav-tabs">
+<!-- git remote add origin https://github.com/AlexandrMazharov/Todo-Angular.git -->
+<div class="header">
+  <div class="container">
+    <div class="d-flex flex-row justify-content-end">
+      <div class="logo my-2 mr-n3">
+        <img src="../assets/images/logo.png" class="img-fluid" alt="logo" />
+      </div>
+    </div>
+    <div class="row d-flex justify-content-between">
+      <ul class="nav nav-tabs d-flex flex-row">
         <li class="nav-item" *ngIf="!authService.isLoggedIn">
           <a
             class="nav-link"
             href="#"
             routerLink="/sign-in"
             routerLinkActive="active"
-            >Вход</a
+          >
+            {{ "LANGUAGES.login" | translate }}</a
           >
         </li>
         <li class="nav-item" *ngIf="authService.isLoggedIn">
@@ -71,9 +75,10 @@
             class="nav-link"
             href="#"
             (click)="authService.SignOut()"
-            [routerLink]="['/log-in']"
+            [routerLink]="[]"
             routerLinkActive="active"
-            >Выход</a
+          >
+            {{ "LANGUAGES.logout" | translate }}</a
           >
         </li>
         <li class="nav-item" *ngIf="authService.isLoggedIn">
@@ -82,11 +87,28 @@
             href="#"
             [routerLink]="['/todo']"
             routerLinkActive="active"
-            >Список задач</a
+            >{{ "LANGUAGES.taskList" | translate }}</a
           >
         </li>
       </ul>
 
+      <div class="">
+        <select
+          class="form-control"
+          #langselect
+          (change)="onchangeLng(langselect.value)"
+        >
+          <option>EN</option>
+          <option>RU</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="custom-main">
+  <div class="container custom-main__inner">
+    <div class="d-flex flex-column">
       <!-- //картинка видна если не авторизирован -->
       <div *ngIf="!authService.isLoggedIn" class="mx-auto text-center">
         <img src="../assets/images/ORL55C1.png" alt="img" class="img-fluid" />
