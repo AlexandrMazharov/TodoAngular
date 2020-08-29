@@ -16,13 +16,13 @@ export class AppComponent {
     public authService: AuthService,
     private translateService: TranslateService
   ) {
-    this.currentLng = 'en';
+    this.currentLng = 'ru';
     translateService.use[this.currentLng];
   }
   onchangeLng(lng) {
-    this.translateService.use(lng.toLowerCase());    
+    this.translateService.use(lng.toLowerCase());
   }
   ngOnInit(): void {
-    this.translateService.use(environment.defaultLocale);
+    this.translateService.use(this.currentLng);
   }
 }
