@@ -12,20 +12,19 @@ import { auth } from 'firebase';
 })
 export class HomeComponent implements OnInit {
   //  public todoService: TodoListService;
-  userid;
+  // userid;
   constructor(
     public authService: AuthService,
     public todoService: TodoListService
   ) {
-    // authService.isLoggedIn
-    console.log('Авторизация : ' + authService.isLoggedIn);
-    if (authService.isLoggedIn) {
-      this.userid = 'logined';
-    } else {
-      this.userid = 'notlogined';
-    }
+    // console.log('Авторизация : ' + authService.isLoggedIn);
+    // if (authService.isLoggedIn) {
+    //   this.userid = 'logined';
+    // } else {
+    //   this.userid = 'notlogined';
+    // }
   }
-  // constructor() {}
+
 
   ngOnInit(): void {}
 }

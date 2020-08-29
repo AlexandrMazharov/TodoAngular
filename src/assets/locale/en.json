@@ -8,7 +8,7 @@
     "register": "Registration",
     "forgotPassword": "Forgot your password?",
 
-    "emaiAddress": "Email address",
+    "emailAddress": "Email address",
     "thankRegistering": "Thank You for Registering",
     "sentConfirmationEmail": "We have sent a confirmation email to ",
     "checkYourEmail": "Please check your email and click on the link to verfiy your email address.",
@@ -22,6 +22,11 @@
     "notTask2": "not found task",
     "welcome": "Welcome!",
     "home": "Home",
-    "welcomeText": "This platform provides a convenient checklist where you can create plan for the day and the current week."
+    "welcomeText": "This platform provides a convenient checklist where you can create plan for the day and the current week.",
+
+    "resetPass": "Reset password",
+    "enterEmail": " Please enter your email address to request a password reset.",
+    "reset": "Reset password",
+    "back": "Back"
   }
 }

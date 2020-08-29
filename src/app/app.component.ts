@@ -10,8 +10,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'pr2';
-  currentLng;
+  currentLng; // current language for correct localization
   constructor(
     public authService: AuthService,
     private translateService: TranslateService
@@ -20,6 +19,7 @@ export class AppComponent {
     translateService.use[this.currentLng];
   }
   onchangeLng(lng) {
+    // change current language
     this.translateService.use(lng.toLowerCase());
   }
   ngOnInit(): void {
