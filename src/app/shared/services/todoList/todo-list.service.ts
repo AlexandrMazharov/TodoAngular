@@ -60,6 +60,7 @@ export class TodoListService {
     }
     return -1;
   }
+  
   public AddItem(date): void {
     // add empty task on datebase
     console.group('AddItem');
