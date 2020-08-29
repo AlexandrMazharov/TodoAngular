@@ -1,5 +1,9 @@
-.custom__close {
+.task {
   position: relative;
+}
+.task__close {
+  position: absolute;
   z-index: 100;
-  left: -30px;
+  right: 10px;
+  top: 4px;
 }

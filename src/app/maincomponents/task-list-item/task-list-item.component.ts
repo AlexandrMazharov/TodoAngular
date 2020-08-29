@@ -61,6 +61,7 @@ export class TaskListItemComponent implements OnInit {
     private fb: FormBuilder,
     private translateService: TranslateService
   ) {
+    
     // this.translateService.get(['delTask']).subscribe((translations) => {
     //   this.titileDel = translations['delTask'];
     // });

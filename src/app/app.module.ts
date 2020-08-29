@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -24,7 +24,6 @@ import { TaskListItemComponent } from './maincomponents/task-list-item/task-list
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {
   MissingTranslationHandler,
@@ -33,6 +32,13 @@ import {
 } from '@ngx-translate/core';
 import { MissingTranslationService } from './shared/services/missingTranslation/missing-translation.service';
 
+//material
+import { MaterialModule } from './material/material/material.module';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// import { MatMomentDateModule } from '@angular/material-moment-adapter';
 const firebaseConfig = {
   apiKey: 'AIzaSyCEVeGO5xaica798f1Z_2s8OBI4Rgh7kWk',
   authDomain: 'todo-angular-d2f25.firebaseapp.com',
@@ -83,8 +89,23 @@ export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
       useDefaultLang: false,
     }),
     HttpClientModule,
+    MaterialModule,
+
+    //material
+    MatDatepickerModule,
+    MatNativeDateModule,
+    BrowserAnimationsModule,
+
+    // MatMomentDateModule,
   ],
-  providers: [AuthService, TodoListService, HttpClient],
+  providers: [
+    AuthService,
+    TodoListService,
+    HttpClient,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    // MatMomentDateModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

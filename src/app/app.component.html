@@ -1,61 +1,17 @@
-<!-- <nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <a class="navbar-brand" href="#">TODO-APP</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarNav"
-    aria-controls="navbarNav"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/sign-in"
-          >LOGIN <span class="sr-only">(current)</span></a
-        >
-      </li>
-      <li class="nav-item" routerLink="/register-user">
-        <a class="nav-link" routerLink="/register-user"
-          >REGISTER <span class="sr-only">(current)</span></a
-        >
-      </li>
-      <li class="nav-item" (click)="authService.SignOut()">
-        <a class="nav-link">SignOut <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item" [routerLink]="['/todo']">
-        <a class="nav-link">MAIN <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"
-          >Home <span class="sr-only">(current)</span></a
-        >
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-          >Disabled</a
-        >
-      </li>
-    </ul>
-  </div>
-</nav> -->
-<!--  -->
 <!-- git remote add origin https://github.com/AlexandrMazharov/Todo-Angular.git -->
 <div class="header">
   <div class="container">
     <div class="d-flex flex-row justify-content-end">
       <div class="logo my-2 mr-n3">
-        <img src="../assets/images/logo.png" class="img-fluid" alt="logo" />
+        <!-- <img src="../assets/images/logo.png" class="img-fluid" alt="logo" /> -->
+        <div class="logo">
+          <div class="arrow">
+            <div class="arrow__body"></div>
+            <div class="arrow__head"></div>
+          </div>
+
+          <div class="logo__text">TODO-APP</div>
+        </div>
       </div>
     </div>
     <div class="row d-flex justify-content-between">
@@ -64,19 +20,43 @@
           <a
             class="nav-link"
             href="#"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            {{ "LANGUAGES.home" | translate }}
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="!authService.isLoggedIn">
+          <a
+            class="nav-link"
+            href="#"
             routerLink="/sign-in"
             routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
           >
             {{ "LANGUAGES.login" | translate }}</a
           >
         </li>
+        <li class="nav-item" *ngIf="!authService.isLoggedIn">
+          <a
+            class="nav-link"
+            href="#"
+            routerLinkActive="active"
+            [routerLink]="['/register-user']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            {{ "LANGUAGES.register" | translate }}</a
+          >
+        </li>
+
         <li class="nav-item" *ngIf="authService.isLoggedIn">
           <a
             class="nav-link"
             href="#"
             (click)="authService.SignOut()"
-            [routerLink]="[]"
-            routerLinkActive="active"
+            [routerLink]="['/todo']"
+            [routerLinkActiveOptions]="{ exact: true }"
           >
             {{ "LANGUAGES.logout" | translate }}</a
           >
@@ -87,19 +67,20 @@
             href="#"
             [routerLink]="['/todo']"
             routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
             >{{ "LANGUAGES.taskList" | translate }}</a
           >
         </li>
       </ul>
 
-      <div class="">
+      <div>
         <select
-          class="form-control"
+          class="form-control app__lng"
           #langselect
           (change)="onchangeLng(langselect.value)"
         >
-          <option>EN</option>
           <option>RU</option>
+          <option>EN</option>
         </select>
       </div>
     </div>
@@ -107,9 +88,8 @@
 </div>
 
 <div class="custom-main">
-  <div class="container custom-main__inner">
+  <div class="container-md custom-main__inner">
     <div class="d-flex flex-column">
-      <!-- //картинка видна если не авторизирован -->
       <div *ngIf="!authService.isLoggedIn" class="mx-auto text-center">
         <img src="../assets/images/ORL55C1.png" alt="img" class="img-fluid" />
       </div>

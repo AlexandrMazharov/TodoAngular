@@ -12,11 +12,16 @@
     "thankRegistering": "Thank You for Registering",
     "sentConfirmationEmail": "We have sent a confirmation email to ",
     "checkYourEmail": "Please check your email and click on the link to verfiy your email address.",
-    "sendLetter": "Выслать письмо повторно",
-    "logout": "LogOut",
+    "sendLetter": "To send a letter",
+    "logout": "Exit",
     "taskList": "Task list",
-    "tasksForToday": "Tasks for today",
+    "tasksForDay": "Tasks for ",
     "addTask": "Add task",
-    "delTask": "Dell"
+    "delTask": "Dell",
+    "notTask1": "On",
+    "notTask2": "not found task",
+    "welcome": "Welcome!",
+    "home": "Home",
+    "welcomeText": "This platform provides a convenient checklist where you can create plan for the day and the current week."
   }
 }

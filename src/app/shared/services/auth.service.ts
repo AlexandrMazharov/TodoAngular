@@ -7,6 +7,7 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
@@ -17,7 +18,8 @@ export class AuthService {
     public afs: AngularFirestore, // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,
-    public ngZone: NgZone // NgZone service to remove outside scope warning
+    public ngZone: NgZone, // NgZone service to remove outside scope warning
+    private route: ActivatedRoute
   ) {
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
@@ -30,22 +32,18 @@ export class AuthService {
         localStorage.setItem('user', null);
         JSON.parse(localStorage.getItem('user'));
       }
-
       router.navigate['/todo'];
     });
   }
 
   // Sign in with email/password
   SignIn(email, password) {
-    console.log('SignIn');
-
     // return this.afAuth.auth
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.SetUserData(result.user);
         console.log(localStorage.getItem('user'));
-
         this.ngZone.run(() => {
           this.router.navigate(['/todo']);
         });
@@ -107,7 +105,7 @@ export class AuthService {
 
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((result) => {
       this.ngZone.run(() => {
-        this.router.navigate(['/todo']);
+        this.router.navigate(['/todo'], { relativeTo: this.route });
       });
     });
   }
@@ -119,7 +117,7 @@ export class AuthService {
       .then((result) => {
         // this.SetUserData(result.user);
         this.ngZone.run(() => {
-          this.router.navigate(['/todo']);
+          this.router.navigate(['/todo'], { relativeTo: this.route });
         });
         this.SetUserData(result.user);
       })
@@ -152,7 +150,7 @@ export class AuthService {
     // return this.afAuth.auth.signOut().then(() => {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['']);      
+      this.router.navigate(['']);
     });
   }
 }

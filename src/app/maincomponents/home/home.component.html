@@ -1,13 +1,14 @@
 <div class="d-flex justify-content-center">
-  <div class="col-6">
-    <h2>Добро пожаловать</h2>
-    <p>
-      На этой планформе представлен удобный чек-лист, где вы можете составить
-      план на день и текущую неделю. Для начала работы нужно авторизироваться.
+  <div class="col col-md-6">
+    <h2 class="text-center">
+      {{ "LANGUAGES.welcome" | translate }}
+    </h2>
+    <p class="text-center">
+      {{ "LANGUAGES.welcomeText" | translate }}
     </p>
     <div class="d-flex justify-content-center flex-row">
       <button type="button" routerLink="/sign-in" class="btn btn-primary mx-2">
-        Вход
+        {{ "LANGUAGES.login" | translate }}
       </button>
 
       <button
@@ -15,7 +16,7 @@
         routerLink="/register-user"
         class="btn btn-success mx-2"
       >
-        Регистрация
+        {{ "LANGUAGES.register" | translate }}
       </button>
     </div>
   </div>
