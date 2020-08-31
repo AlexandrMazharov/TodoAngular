@@ -29,9 +29,8 @@
 
       <div *ngIf="todolist.isLoad; else unset" class="">
         <ul class="resetPadding">
-       
           <app-task-list-item
-            *ngFor="let item of todolist.sortList.get(selectedDateISO)"
+            *ngFor="let item of todolist.sortList?.get(selectedDateISO)"
             [item]="item"
           >
           </app-task-list-item>

@@ -18,7 +18,7 @@ export class MainComponent implements OnInit {
 
   dateChanged($event) {
     this.selectedDateISO = this.selectedDate.toISOString();
-    console.log(this.selectedDateISO);
+    // console.log(this.selectedDateISO);
     this.displayOnPage(this.selectedDate);
   }
   displayOnPage(date) {
