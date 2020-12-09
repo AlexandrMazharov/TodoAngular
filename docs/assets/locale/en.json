@@ -1,0 +1,32 @@
+{
+  "LANGUAGES": {
+    "email": "Email ",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "login": "Login",
+    "logInGoogle": "Login in Google",
+    "register": "Registration",
+    "forgotPassword": "Forgot your password?",
+
+    "emailAddress": "Email address",
+    "thankRegistering": "Thank You for Registering",
+    "sentConfirmationEmail": "We have sent a confirmation email to ",
+    "checkYourEmail": "Please check your email and click on the link to verfiy your email address.",
+    "sendLetter": "To send a letter",
+    "logout": "Exit",
+    "taskList": "Task list",
+    "tasksForDay": "Tasks for ",
+    "addTask": "Add task",
+    "delTask": "Dell",
+    "notTask1": "On",
+    "notTask2": "not found task",
+    "welcome": "Welcome!",
+    "home": "Home",
+    "welcomeText": "This platform provides a convenient checklist where you can create plan for the day and the current week.",
+
+    "resetPass": "Reset password",
+    "enterEmail": " Please enter your email address to request a password reset.",
+    "reset": "Reset password",
+    "back": "Back"
+  }
+}
